@@ -60,7 +60,7 @@ void MainWindow::on_SUBMIT_clicked()
 
 
 
-        if(own=="")
+        if(own=="" || vT== "")
 
 }
 
