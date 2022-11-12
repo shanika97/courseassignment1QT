@@ -50,17 +50,25 @@ void MainWindow::on_SUBMIT_clicked()
       QString result;
       result.append(QString::number(nic.length()));
 
-      if(nic.length()==10 || nic.length()==12){
+     /* if(nic.length()==10 || nic.length()==12){
          QMessageBox::information(this,"NIC number ","the lenhth is valid", QMessageBox::Ok);
 
       }
       else{
            QMessageBox::information(this,"NIC number ","the lenhth is invalid "+result, QMessageBox::Ok);
       }
+*/
 
 
-
-        if(own=="" || vT== "")
+        if(own=="" || vT=="- Select type - " || cNo=="" || vNo=="" || fuel=="- Select type - "){
+              QMessageBox::information(this,"feilds ","fill the all feilds ", QMessageBox::Ok);
+        }
+        else{
+            if(!(cNo.length()==15 || nic.length()==10 || nic.length()==12 )){
+                QMessageBox::information(this," Error "," Invalid Nic or Chassi No ", QMessageBox::Ok);
+            }
+            ui->label_status->setText("successfully registered !");
+        }
 
 }
 
